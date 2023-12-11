@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Squares and Cubes Calculator</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 20px auto;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Squares and Cubes Calculator</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Square</th>
+        <th>Cube</th>
+      </tr>
+    </thead>
+    <tbody id="resultTableBody">
+      <!-- Result rows will be added here dynamically -->
+    </tbody>
+  </table>
+
+  <script>
+    // Function to calculate squares and cubes and display the results in a table
+    function calculateSquaresAndCubes() {
+      // Reference to the table body
+      var tableBody = document.getElementById("resultTableBody");
+
+      // Clear previous results if any
+      tableBody.innerHTML = "";
+
+      // Loop through numbers from 0 to 10
+      for (var i = 0; i <= 10; i++) {
+        // Calculate square and cube
+        var square = i * i;
+        var cube = i * i * i;
+
+        // Create a new table row
+        var row = tableBody.insertRow();
+
+        // Insert cells for number, square, and cube in the row
+        var cellNumber = row.insertCell(0);
+        var cellSquare = row.insertCell(1);
+        var cellCube = row.insertCell(2);
+
+        // Set the content of cells
+        cellNumber.innerHTML = i;
+        cellSquare.innerHTML = square;
+        cellCube.innerHTML = cube;
+      }
+    }
+
+    // Call the function to calculate and display squares and cubes
+    calculateSquaresAndCubes();
+  </script>
+
+</body>
+</html>

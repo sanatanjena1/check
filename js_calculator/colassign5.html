@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Animation</title>
+  <style>
+    #animatedText {
+      color: red;
+      font-size: 20pt;
+      transition: font-size 0.1s, color 0.1s;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="animatedText">TEXT-GROWING</div>
+
+  <script>
+    var animatedText = document.getElementById("animatedText");
+    var fontSize = 20; // Initial font size
+    var textColor = "red"; // Initial text color
+
+    function animateText() {
+      // Increase font size until it reaches 50pt
+      if (fontSize < 50) {
+        fontSize += 1;
+        animatedText.style.fontSize = fontSize + "pt";
+        animatedText.innerHTML = "TEXT-GROWING";
+        animatedText.style.color = textColor;
+      } else if (fontSize === 50) {
+        // When font size reaches 50pt, change text and color
+        animatedText.innerHTML = "TEXT-SHRINKING";
+        animatedText.style.color = "blue";
+      } else if (fontSize > 5) {
+        // Decrease font size until it reaches 5pt
+        fontSize -= 1;
+        animatedText.style.fontSize = fontSize + "pt";
+        animatedText.innerHTML = "TEXT-DECREASING";
+        animatedText.style.color = "green";
+      }
+    }
+
+    // Set an interval to call the animation function every 100ms
+    setInterval(animateText, 100);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Functions Demo</title>
+  <script>
+    // Function to find the position of the left-most vowel in a string
+    function findLeftmostVowelPosition(inputString) {
+      const vowels = ['a', 'e', 'i', 'o', 'u'];
+      for (let i = 0; i < inputString.length; i++) {
+        if (vowels.includes(inputString[i].toLowerCase())) {
+          return i + 1; // Return position (1-based index)
+        }
+      }
+      return -1; // Return -1 if no vowel is found
+    }
+
+    // Function to reverse the digits of a number
+    function reverseDigits(number) {
+      const reversedNumber = parseInt(number.toString().split('').reverse().join(''));
+      return reversedNumber;
+    }
+
+    // Function to demonstrate and display results
+    function demonstrateFunctions() {
+      const inputString = "Hello World";
+      const inputNumber = 12345;
+
+      // Problem (a) - Find position of the left-most vowel
+      const vowelPosition = findLeftmostVowelPosition(inputString);
+      console.log(`Position of the left-most vowel in "${inputString}": ${vowelPosition}`);
+
+      // Problem (b) - Reverse the digits of a number
+      const reversedNumber = reverseDigits(inputNumber);
+      console.log(`Reverse of ${inputNumber}: ${reversedNumber}`);
+    }
+  </script>
+</head>
+<body>
+
+  <h1>JavaScript Functions Demo</h1>
+
+  <script>
+    // Call the demonstrateFunctions function to display results in the browser console
+    demonstrateFunctions();
+  </script>
+
+</body>
+</html>
